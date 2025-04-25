@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
 import Link from "next/link"
 import { motion } from "framer-motion"
@@ -32,9 +31,7 @@ export default function ContactPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Form submission logic would go here
     console.log("Form submitted:", formState)
-    // Reset form
     setFormState({
       name: "",
       email: "",
@@ -42,12 +39,11 @@ export default function ContactPage() {
       interest: "",
       message: "",
     })
-    // Show success message
     alert("Thank you for your message! We'll get back to you soon.")
   }
 
   return (
-    <div className="min-h-screen pt-24 pb-16">
+    <div className="min-h-screen pt-24 pb-16 dark:bg-black dark:text-slate-300">
       <div className="container mx-auto px-4">
         <Link
           href="/"
@@ -67,7 +63,7 @@ export default function ContactPage() {
             Contact Us
           </h1>
           <div className="h-1 w-24 bg-gradient-to-r from-purple-500 to-cyan-500 mx-auto mb-6" />
-          <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+          <p className="text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto">
             Get in touch with our team to discuss how we can help transform your media production workflow.
           </p>
         </motion.div>
@@ -79,7 +75,7 @@ export default function ContactPage() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="lg:col-span-2"
           >
-            <Card className="bg-white border-slate-800">
+            <Card className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700">
               <CardHeader>
                 <CardTitle className="text-2xl">Get in Touch</CardTitle>
                 <CardDescription>
@@ -98,7 +94,7 @@ export default function ContactPage() {
                         value={formState.name}
                         onChange={handleInputChange}
                         required
-                        className="bg-slate-800 border-slate-700"
+                        className="bg-slate-100 dark:bg-slate-800 dark:border-slate-700"
                       />
                     </div>
                     <div className="space-y-2">
@@ -111,7 +107,7 @@ export default function ContactPage() {
                         value={formState.email}
                         onChange={handleInputChange}
                         required
-                        className="bg-slate-800 border-slate-700"
+                        className="bg-slate-100 dark:bg-slate-800 dark:border-slate-700"
                       />
                     </div>
                   </div>
@@ -124,7 +120,7 @@ export default function ContactPage() {
                         placeholder="Your Company"
                         value={formState.company}
                         onChange={handleInputChange}
-                        className="bg-slate-800 border-slate-700"
+                        className="bg-slate-100 dark:bg-slate-800 dark:border-slate-700"
                       />
                     </div>
                     <div className="space-y-2">
@@ -133,10 +129,10 @@ export default function ContactPage() {
                         value={formState.interest}
                         onValueChange={(value) => setFormState((prev) => ({ ...prev, interest: value }))}
                       >
-                        <SelectTrigger className="bg-slate-800 border-slate-700">
+                        <SelectTrigger className="bg-slate-100 dark:bg-slate-800 dark:border-slate-700">
                           <SelectValue placeholder="Select an option" />
                         </SelectTrigger>
-                        <SelectContent>
+                        <SelectContent className="bg-white dark:bg-slate-800 dark:border-slate-700">
                           <SelectItem value="media-production">Media Production Tools</SelectItem>
                           <SelectItem value="streaming">Streaming & Broadcasting</SelectItem>
                           <SelectItem value="content-management">Content Management</SelectItem>
@@ -157,7 +153,7 @@ export default function ContactPage() {
                       value={formState.message}
                       onChange={handleInputChange}
                       required
-                      className="min-h-[120px] bg-slate-800 border-slate-700"
+                      className="min-h-[120px] bg-slate-100 dark:bg-slate-800 dark:border-slate-700"
                     />
                   </div>
                   <Button
@@ -177,48 +173,48 @@ export default function ContactPage() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.4 }}
           >
-            <Card className="bg-white border-slate-800 h-full">
+            <Card className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 h-full">
               <CardHeader>
                 <CardTitle className="text-2xl">Contact Information</CardTitle>
                 <CardDescription>Reach out to us directly through any of these channels.</CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <div className="bg-purple-500/20 p-3 rounded-full">
+                  <div className="bg-purple-500/20 p-3 rounded-full dark:bg-purple-600/20">
                     <Mail className="h-6 w-6 text-purple-400" />
                   </div>
                   <div>
                     <p className="font-medium mb-1">Email</p>
-                    <p className="text-slate-600">info@1playglobal.com</p>
-                    <p className="text-slate-600">support@1playglobal.com</p>
+                    <p className="text-slate-600 dark:text-slate-400">info@1playglobal.com</p>
+                    <p className="text-slate-600 dark:text-slate-400">support@1playglobal.com</p>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="bg-cyan-500/20 p-3 rounded-full">
+                  <div className="bg-cyan-500/20 p-3 rounded-full dark:bg-cyan-600/20">
                     <Phone className="h-6 w-6 text-cyan-400" />
                   </div>
                   <div>
                     <h4 className="font-medium mb-1">Phone</h4>
-                    <p className="text-slate-600">+1 (555) 123-4567</p>
-                    <p className="text-slate-600">+44 20 1234 5678</p>
+                    <p className="text-slate-600 dark:text-slate-400">+1 (555) 123-4567</p>
+                    <p className="text-slate-600 dark:text-slate-400">+44 20 1234 5678</p>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="bg-purple-500/20 p-3 rounded-full">
+                  <div className="bg-purple-500/20 p-3 rounded-full dark:bg-purple-600/20">
                     <MapPin className="h-6 w-6 text-purple-400" />
                   </div>
                   <div>
                     <h4 className="font-medium mb-1">Office Locations</h4>
-                    <p className="text-slate-600 mb-2">
+                    <p className="text-slate-600 dark:text-slate-400 mb-2">
                       <strong>Headquarters:</strong>
                       <br />
                       123 Tech Plaza, Suite 500
                       <br />
                       San Francisco, CA 94105, USA
                     </p>
-                    <p className="text-slate-600">
+                    <p className="text-slate-600 dark:text-slate-400">
                       <strong>APAC Office:</strong>
                       <br />
                       One Raffles Place, #10-01

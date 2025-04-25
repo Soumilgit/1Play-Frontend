@@ -145,7 +145,6 @@ const caseStudiesData = {
     relatedCaseStudies: ["streamflex-media", "news-network"],
   },
 }
-
 export default function CaseStudyPage() {
   const params = useParams()
   const slug = params.slug as string
@@ -153,8 +152,6 @@ export default function CaseStudyPage() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    // In a real application, this would be an API call
-    // For this demo, we're using the mock data
     if (slug && caseStudiesData[slug as keyof typeof caseStudiesData]) {
       setCaseStudy(caseStudiesData[slug as keyof typeof caseStudiesData])
     }
@@ -173,7 +170,7 @@ export default function CaseStudyPage() {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center p-4">
         <h1 className="text-2xl font-bold mb-4">Case Study Not Found</h1>
-        <p className="text-slate-400 mb-6">The case study you're looking for doesn't exist or has been moved.</p>
+        <p className="text-muted-foreground mb-6">The case study you're looking for doesn't exist or has been moved.</p>
         <Link href="/case-studies">
           <Button>
             <ArrowLeft className="mr-2 h-4 w-4" />
@@ -185,11 +182,11 @@ export default function CaseStudyPage() {
   }
 
   return (
-    <div className="min-h-screen pt-24 pb-16">
+    <div className="min-h-screen pt-24 pb-16 bg-background text-foreground">
       <div className="container mx-auto px-4">
         <Link
           href="/case-studies"
-          className="inline-flex items-center text-sm text-slate-400 hover:text-purple-400 transition-colors mb-8"
+          className="inline-flex items-center text-sm text-muted-foreground hover:text-purple-400 transition-colors mb-8"
         >
           <ArrowLeft className="mr-2 h-4 w-4" />
           Back to Case Studies
@@ -205,7 +202,7 @@ export default function CaseStudyPage() {
               {caseStudy.title}
             </h1>
             <div className="h-1 w-24 bg-gradient-to-r from-purple-500 to-cyan-500 mb-6" />
-            <p className="text-xl text-slate-600 mb-6">{caseStudy.description}</p>
+            <p className="text-xl text-foreground mb-6">{caseStudy.description}</p>
             <div className="flex flex-wrap gap-2 mb-6">
               {caseStudy.tags.map((tag: string) => (
                 <Badge key={tag} variant="secondary" className="text-sm">
@@ -222,7 +219,7 @@ export default function CaseStudyPage() {
             className="relative"
           >
             <div className="absolute -inset-1 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-2xl blur-lg opacity-20" />
-            <div className="relative aspect-video rounded-2xl overflow-hidden border border-slate-800">
+            <div className="relative aspect-video rounded-2xl overflow-hidden border border-border">
               <Image
                 src={caseStudy.image || "/placeholder.svg"}
                 alt={caseStudy.title}
@@ -236,26 +233,26 @@ export default function CaseStudyPage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
           <div className="lg:col-span-2">
-            <Card className="bg-slate-900/50 border-slate-800">
+            <Card>
               <CardHeader>
                 <CardTitle className="text-2xl">Challenge & Solution</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="prose prose-invert max-w-none">
-                  <p className="text-slate-100 whitespace-pre-line">{caseStudy.fullDescription}</p>
+                <div className="prose max-w-none">
+                  <p className="whitespace-pre-line">{caseStudy.fullDescription}</p>
                 </div>
               </CardContent>
             </Card>
           </div>
 
           <div>
-            <Card className="bg-slate-900/50 border-slate-800 mb-8">
+            <Card className="mb-8">
               <CardHeader>
                 <CardTitle className="text-xl">Client Information</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="flex items-center mb-6">
-                  <div className="w-16 h-16 bg-slate-800 rounded-md overflow-hidden mr-4">
+                  <div className="w-16 h-16 bg-muted rounded-md overflow-hidden mr-4">
                     <Image
                       src={caseStudy.logo || "/placeholder.svg"}
                       alt={caseStudy.client}
@@ -266,7 +263,7 @@ export default function CaseStudyPage() {
                   </div>
                   <div>
                     <h3 className="font-bold text-lg">{caseStudy.client}</h3>
-                    <p className="text-slate-100">{caseStudy.industry}</p>
+                    <p className="text-muted-foreground">{caseStudy.industry}</p>
                   </div>
                 </div>
                 <div className="space-y-4">
@@ -274,28 +271,28 @@ export default function CaseStudyPage() {
                     <Building className="h-5 w-5 text-purple-400 mt-0.5 mr-3" />
                     <div>
                       <p className="font-medium">Industry</p>
-                      <p className="text-slate-100">{caseStudy.industry}</p>
+                      <p className="text-muted-foreground">{caseStudy.industry}</p>
                     </div>
                   </div>
                   <div className="flex items-start">
                     <Calendar className="h-5 w-5 text-cyan-400 mt-0.5 mr-3" />
                     <div>
                       <p className="font-medium">Project Duration</p>
-                      <p className="text-slate-100">6 months</p>
+                      <p className="text-muted-foreground">6 months</p>
                     </div>
                   </div>
                   <div className="flex items-start">
                     <BarChart className="h-5 w-5 text-purple-400 mt-0.5 mr-3" />
                     <div>
                       <p className="font-medium">Solution</p>
-                      <p className="text-slate-100">{caseStudy.solution}</p>
+                      <p className="text-muted-foreground">{caseStudy.solution}</p>
                     </div>
                   </div>
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="bg-slate-900/50 border-slate-800">
+            <Card>
               <CardHeader>
                 <CardTitle className="text-xl">Key Results</CardTitle>
               </CardHeader>
@@ -314,7 +311,7 @@ export default function CaseStudyPage() {
                           <Check className="h-4 w-4 text-purple-400" />
                         </div>
                       </div>
-                      <span>{result}</span>
+                      <span className="text-foreground">{result}</span>
                     </motion.li>
                   ))}
                 </ul>
@@ -326,12 +323,12 @@ export default function CaseStudyPage() {
         <div className="mb-16">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {caseStudy.stats.map((stat: { label: string; value: string }, index: number) => (
-              <Card key={index} className="bg-slate-900/50 border-slate-800">
+              <Card key={index}>
                 <CardContent className="p-6 text-center">
                   <p className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-cyan-400 mb-2">
                     {stat.value}
                   </p>
-                  <p className="text-slate-300">{stat.label}</p>
+                  <p className="text-foreground">{stat.label}</p>
                 </CardContent>
               </Card>
             ))}
@@ -339,7 +336,7 @@ export default function CaseStudyPage() {
         </div>
 
         <div className="mb-16">
-          <Card className="bg-gradient-to-r from-purple-900/30 to-cyan-900/30 border-slate-800">
+          <Card className="bg-gradient-to-r from-purple-900/30 to-cyan-900/30">
             <CardContent className="p-8">
               <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
                 <div className="flex-shrink-0">
@@ -349,7 +346,7 @@ export default function CaseStudyPage() {
                   <p className="text-xl italic mb-6">"{caseStudy.testimonial.quote}"</p>
                   <div>
                     <p className="font-semibold text-lg">{caseStudy.testimonial.author}</p>
-                    <p className="text-slate-700">{caseStudy.testimonial.position}</p>
+                    <p className="text-muted-foreground">{caseStudy.testimonial.position}</p>
                   </div>
                 </div>
               </div>
@@ -365,7 +362,7 @@ export default function CaseStudyPage() {
               if (!related) return null
 
               return (
-                <Card key={relatedSlug} className="bg-slate-900/50 border-slate-800 overflow-hidden">
+                <Card key={relatedSlug} className="overflow-hidden">
                   <div className="grid grid-cols-1 md:grid-cols-2">
                     <div className="relative h-48 md:h-auto">
                       <Image
@@ -379,7 +376,7 @@ export default function CaseStudyPage() {
                       <div>
                         <Badge className="mb-2">{related.client}</Badge>
                         <h3 className="text-lg font-bold mb-2">{related.title}</h3>
-                        <p className="text-slate-300 text-sm mb-4 line-clamp-2">{related.description}</p>
+                        <p className="text-muted-foreground text-sm mb-4 line-clamp-2">{related.description}</p>
                       </div>
                       <Link href={`/case-studies/${relatedSlug}`}>
                         <Button variant="outline" className="w-full">
@@ -397,14 +394,14 @@ export default function CaseStudyPage() {
 
         <div className="text-center">
           <h2 className="text-2xl font-bold mb-4">Ready to achieve similar results?</h2>
-          <p className="text-slate-700 mb-6 max-w-2xl mx-auto">
+          <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
             Contact our team today to discuss how we can help you transform your media workflow.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link href="/contact">
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700"
+                className="bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white"
               >
                 Request Demo
                 <ArrowRight className="ml-2 h-4 w-4" />

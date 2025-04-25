@@ -68,7 +68,6 @@ const solutionsData = [
     featured: false,
   },
 ]
-
 export default function SolutionsPage() {
   const [searchTerm, setSearchTerm] = useState("")
   const [categoryFilter, setCategoryFilter] = useState("")
@@ -87,11 +86,11 @@ export default function SolutionsPage() {
   const categories = Array.from(new Set(solutionsData.map((solution) => solution.category)))
 
   return (
-    <div className="min-h-screen pt-24 pb-16">
+    <div className="min-h-screen pt-24 pb-16 bg-background text-foreground">
       <div className="container mx-auto px-4">
         <Link
           href="/#solutions"
-          className="inline-flex items-center text-sm text-slate-400 hover:text-purple-400 transition-colors mb-8"
+          className="inline-flex items-center text-sm text-muted-foreground hover:text-purple-400 transition-colors mb-8"
         >
           <ArrowLeft className="mr-2 h-4 w-4" />
           Back to Home
@@ -107,7 +106,7 @@ export default function SolutionsPage() {
             Our Solutions
           </h1>
           <div className="h-1 w-24 bg-gradient-to-r from-purple-500 to-cyan-500 mx-auto mb-6" />
-          <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Cutting-edge technology solutions designed to transform your media production workflow.
           </p>
         </motion.div>
@@ -125,7 +124,7 @@ export default function SolutionsPage() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.1 * index }}
                 >
-                  <Card className="bg-slate-900/50 border-slate-800 overflow-hidden h-full">
+                  <Card className="h-full">
                     <div className="grid grid-cols-1 md:grid-cols-2 h-full">
                       <div className="relative h-48 md:h-auto">
                         <Image
@@ -141,7 +140,7 @@ export default function SolutionsPage() {
                       <div className="p-6 flex flex-col justify-between">
                         <div>
                           <h3 className="text-xl font-bold mb-2">{solution.title}</h3>
-                          <p className="text-slate-100 mb-4">{solution.description}</p>
+                          <p className="text-foreground mb-4">{solution.description}</p>
                           <div className="flex flex-wrap gap-2 mb-4">
                             {solution.tags.map((tag) => (
                               <Badge key={tag} variant="outline" className="text-xs">
@@ -151,7 +150,7 @@ export default function SolutionsPage() {
                           </div>
                         </div>
                         <Link href={`/solutions/${solution.id}`}>
-                          <Button className="w-full bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700">
+                          <Button className="w-full bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white">
                             Learn More
                             <ArrowRight className="ml-2 h-4 w-4" />
                           </Button>
@@ -168,17 +167,17 @@ export default function SolutionsPage() {
         <div className="mb-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="relative md:col-span-2">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400" />
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground" />
               <Input
                 placeholder="Search solutions..."
-                className="pl-10 bg-slate-900/50 border-slate-800"
+                className="pl-10"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
             </div>
             <div className="relative">
               <Select value={categoryFilter} onValueChange={setCategoryFilter}>
-                <SelectTrigger className="bg-slate-900/50 border-slate-800">
+                <SelectTrigger>
                   <SelectValue placeholder="Filter by Category" />
                 </SelectTrigger>
                 <SelectContent>
@@ -207,7 +206,7 @@ export default function SolutionsPage() {
                   transition={{ duration: 0.5, delay: 0.1 * index }}
                 >
                   <Link href={`/solutions/${solution.id}`}>
-                    <Card className="h-full bg-slate-900/50 border-slate-800 hover:border-slate-700 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/5 group">
+                    <Card className="h-full hover:border-primary transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/5 group">
                       <div className="relative h-48 overflow-hidden">
                         <Image
                           src={solution.image || "/placeholder.svg"}
@@ -226,7 +225,7 @@ export default function SolutionsPage() {
                         </CardTitle>
                       </CardHeader>
                       <CardContent>
-                        <CardDescription className="text-slate-100 mb-4">{solution.description}</CardDescription>
+                        <CardDescription className="mb-4">{solution.description}</CardDescription>
                         <div className="flex flex-wrap gap-2">
                           {solution.tags.map((tag) => (
                             <Badge key={tag} variant="outline" className="text-xs">
@@ -248,11 +247,11 @@ export default function SolutionsPage() {
           </div>
         ) : (
           <div className="text-center py-12">
-            <div className="mb-4 text-slate-400">
+            <div className="mb-4 text-muted-foreground">
               <Filter className="h-12 w-12 mx-auto opacity-50" />
             </div>
             <h3 className="text-xl font-medium mb-2">No solutions found</h3>
-            <p className="text-slate-400 mb-6">Try adjusting your search or filters to find what you're looking for.</p>
+            <p className="text-muted-foreground mb-6">Try adjusting your search or filters to find what you're looking for.</p>
             <Button
               variant="outline"
               onClick={() => {
@@ -268,14 +267,14 @@ export default function SolutionsPage() {
         {/* CTA Section */}
         <div className="mt-16 bg-gradient-to-r from-purple-900/20 to-cyan-900/20 rounded-xl p-8 text-center">
           <h2 className="text-2xl font-bold mb-4">Need a custom solution?</h2>
-          <p className="text-slate-300 mb-6 max-w-2xl mx-auto">
+          <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
             Our team of experts can develop tailored solutions to address your specific challenges and requirements.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link href="/contact">
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700"
+                className="bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white"
               >
                 Request Demo
                 <ArrowRight className="ml-2 h-4 w-4" />

@@ -183,8 +183,6 @@ export default function SolutionPage() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    // In a real application, this would be an API call
-    // For this demo, we're using the mock data
     if (slug && solutionsData[slug as keyof typeof solutionsData]) {
       setSolution(solutionsData[slug as keyof typeof solutionsData])
     }
@@ -203,7 +201,7 @@ export default function SolutionPage() {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center p-4">
         <h1 className="text-2xl font-bold mb-4">Solution Not Found</h1>
-        <p className="text-slate-400 mb-6">The solution you're looking for doesn't exist or has been moved.</p>
+        <p className="text-muted-foreground mb-6">The solution you're looking for doesn't exist or has been moved.</p>
         <Link href="/#solutions">
           <Button>
             <ArrowLeft className="mr-2 h-4 w-4" />
@@ -215,11 +213,11 @@ export default function SolutionPage() {
   }
 
   return (
-    <div className="min-h-screen pt-24 pb-16">
+    <div className="min-h-screen pt-24 pb-16 bg-background text-foreground">
       <div className="container mx-auto px-4">
         <Link
           href="/#solutions"
-          className="inline-flex items-center text-sm text-slate-400 hover:text-purple-400 transition-colors mb-8"
+          className="inline-flex items-center text-sm text-muted-foreground hover:text-purple-400 transition-colors mb-8"
         >
           <ArrowLeft className="mr-2 h-4 w-4" />
           Back to Solutions
@@ -231,12 +229,12 @@ export default function SolutionPage() {
               {solution.title}
             </h1>
             <div className="h-1 w-24 bg-gradient-to-r from-purple-500 to-cyan-500 mb-6" />
-            <p className="text-xl text-slate-700 mb-6">{solution.description}</p>
-            <p className="text-slate-700 mb-8">{solution.longDescription}</p>
+            <p className="text-xl text-foreground mb-6">{solution.description}</p>
+            <p className="text-foreground mb-8">{solution.longDescription}</p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700"
+                className="bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white"
               >
                 Request Demo
                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -254,7 +252,7 @@ export default function SolutionPage() {
             className="relative"
           >
             <div className="absolute -inset-1 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-2xl blur-lg opacity-20" />
-            <div className="relative aspect-video rounded-2xl overflow-hidden border border-slate-800">
+            <div className="relative aspect-video rounded-2xl overflow-hidden border border-border">
               <Image
                 src={solution.image || "/placeholder.svg"}
                 alt={solution.title}
@@ -267,12 +265,12 @@ export default function SolutionPage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-          <Card className="bg-slate-900/50 border-slate-800">
+          <Card>
             <CardHeader>
               <CardTitle className="text-2xl text-purple-400">Key Features</CardTitle>
-              <CardDescription><p className="text-slate-100">
+              <CardDescription>
                 What makes our {solution.title.toLowerCase()} stand out from the competition
-                </p></CardDescription>
+              </CardDescription>
             </CardHeader>
             <CardContent>
               <ul className="space-y-3">
@@ -289,17 +287,19 @@ export default function SolutionPage() {
                         <Check className="h-4 w-4 text-purple-400" />
                       </div>
                     </div>
-                    <span>{feature}</span>
+                    <span className="text-foreground">{feature}</span>
                   </motion.li>
                 ))}
               </ul>
             </CardContent>
           </Card>
 
-          <Card className="bg-slate-900/50 border-slate-800">
+          <Card>
             <CardHeader>
               <CardTitle className="text-2xl text-cyan-400">Benefits</CardTitle>
-              <CardDescription><p className="text-slate-100">How our {solution.title.toLowerCase()} can transform your business</p></CardDescription>
+              <CardDescription>
+                How our {solution.title.toLowerCase()} can transform your business
+              </CardDescription>
             </CardHeader>
             <CardContent>
               <ul className="space-y-3">
@@ -316,7 +316,7 @@ export default function SolutionPage() {
                         <Check className="h-4 w-4 text-cyan-400" />
                       </div>
                     </div>
-                    <span>{benefit}</span>
+                    <span className="text-foreground">{benefit}</span>
                   </motion.li>
                 ))}
               </ul>
@@ -327,8 +327,8 @@ export default function SolutionPage() {
         <div className="mb-16">
           <h2 className="text-2xl font-bold mb-8 text-center">Related Case Study</h2>
           <div className="max-w-3xl mx-auto">
-            <Card className="bg-slate-900/50 border-slate-800 overflow-hidden">
-              <div className="relative h-48 text-slate-100">
+            <Card className="overflow-hidden">
+              <div className="relative h-48">
                 <Image
                   src="/placeholder.svg?height=400&width=1200"
                   alt={solution.caseStudy.title}
@@ -336,12 +336,12 @@ export default function SolutionPage() {
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
-                <div className="absolute bottom-4 left-4">
+                <div className="absolute bottom-4 left-4 text-white">
                   <h3 className="text-xl font-bold">{solution.caseStudy.title}</h3>
                 </div>
               </div>
               <CardContent className="pt-6">
-                <p className="text-slate-300 mb-4">{solution.caseStudy.excerpt}</p>
+                <p className="text-foreground mb-4">{solution.caseStudy.excerpt}</p>
                 <Link href={solution.caseStudy.link}>
                   <Button variant="ghost" className="hover:text-purple-400 p-0">
                     Read the full case study
@@ -355,13 +355,13 @@ export default function SolutionPage() {
 
         <div className="bg-gradient-to-r from-purple-900/20 to-cyan-900/20 rounded-xl p-8 text-center">
           <h2 className="text-2xl font-bold mb-4">Ready to transform your media workflow?</h2>
-          <p className="text-slate-300 mb-6 max-w-2xl mx-auto">
+          <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
             Contact our team today to discuss how our {solution.title.toLowerCase()} can help you achieve your goals.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button
               size="lg"
-              className="bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700"
+              className="bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white"
             >
               Request Demo
               <ArrowRight className="ml-2 h-4 w-4" />

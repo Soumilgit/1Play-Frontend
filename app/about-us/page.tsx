@@ -15,9 +15,9 @@ export default function AboutUsPage() {
 
   const teamMembers = [
     {
-      name: "Sarah Johnson",
-      position: "Chief Executive Officer",
-      bio: "With over 20 years of experience in media technology, Sarah has led the company from startup to industry leader.",
+      name: "Mohit Lalvani",
+      position: "Founder & Chief Executive Officer",
+      bio: "With over 20 years of experience in media technology, Mohit has led the company from startup to industry leader.",
       image: "/placeholder.svg?height=400&width=400",
     },
     {
@@ -107,11 +107,11 @@ export default function AboutUsPage() {
   ]
 
   return (
-    <div className="min-h-screen pt-24 pb-16">
+    <div className="min-h-screen pt-24 pb-16 bg-background text-foreground">
       <div className="container mx-auto px-4">
         <Link
           href="/#about"
-          className="inline-flex items-center text-sm text-slate-400 hover:text-purple-400 transition-colors mb-8"
+          className="inline-flex items-center text-sm text-muted-foreground hover:text-purple-400 transition-colors mb-8"
         >
           <ArrowLeft className="mr-2 h-4 w-4" />
           Back to Home
@@ -127,7 +127,7 @@ export default function AboutUsPage() {
             About 1Play Global
           </h1>
           <div className="h-1 w-24 bg-gradient-to-r from-purple-500 to-cyan-500 mx-auto mb-6" />
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             We are pioneers in media technology, dedicated to transforming how content is created, managed, and
             distributed across the globe.
           </p>
@@ -141,7 +141,7 @@ export default function AboutUsPage() {
             className="relative"
           >
             <div className="absolute -inset-1 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-2xl blur-lg opacity-20" />
-            <div className="relative aspect-video rounded-2xl overflow-hidden border border-slate-800">
+            <div className="relative aspect-video rounded-2xl overflow-hidden border border-border">
               <Image
                 src="/placeholder.svg?height=600&width=800"
                 alt="1Play Global Headquarters"
@@ -151,8 +151,8 @@ export default function AboutUsPage() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
                 <div>
-                  <h3 className="text-xl font-bold mb-2">Our Global Headquarters</h3>
-                  <p className="text-sm text-slate-200">San Francisco, California</p>
+                  <h3 className="text-xl font-bold mb-2 text-white">Our Global Headquarters</h3>
+                  <p className="text-sm text-muted-foreground">San Francisco, California</p>
                 </div>
               </div>
             </div>
@@ -164,18 +164,18 @@ export default function AboutUsPage() {
             transition={{ duration: 0.7, delay: 0.4 }}
           >
             <h2 className="text-2xl font-bold mb-4">Our Story</h2>
-            <p className="text-slate-600 mb-6">
+            <p className="text-muted-foreground mb-6">
               Founded in 2015, 1Play Global emerged from a vision to revolutionize media technology. Our founders, with
               backgrounds in broadcasting, software development, and cloud infrastructure, recognized the need for more
               innovative, flexible, and scalable solutions in the rapidly evolving media landscape.
             </p>
-            <p className="text-slate-600 mb-6">
+            <p className="text-muted-foreground mb-6">
               What began as a small team working with local broadcasters has grown into a global company serving major
               media organizations across six continents. Throughout our journey, we've remained committed to our core
               mission: empowering content creators with cutting-edge technology that simplifies complexity and enhances
               creativity.
             </p>
-            <p className="text-slate-600 mb-6">
+            <p className="text-muted-foreground mb-6">
               Today, 1Play Global is at the forefront of media technology innovation, continuously pushing the
               boundaries of what's possible in content creation, management, and distribution.
             </p>
@@ -200,13 +200,13 @@ export default function AboutUsPage() {
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                 transition={{ duration: 0.5, delay: 0.1 * i }}
               >
-                <Card className="h-full bg-slate-900/50 border-slate-800 hover:border-slate-700 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/5">
+                <Card className="h-full hover:border-primary transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/5">
                   <CardHeader>
                     <div className="mb-4">{value.icon}</div>
                     <CardTitle className="text-xl">{value.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <CardDescription className="text-slate-100">{value.description}</CardDescription>
+                    <CardDescription>{value.description}</CardDescription>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -229,16 +229,16 @@ export default function AboutUsPage() {
                   >
                     <div className="md:w-1/2 flex justify-center md:justify-end md:even:justify-start">
                       <div className="w-12 h-12 rounded-full bg-gradient-to-r from-purple-500 to-cyan-500 flex items-center justify-center z-10">
-                        <span className="font-bold">{milestone.year}</span>
+                        <span className="font-bold text-white">{milestone.year}</span>
                       </div>
                     </div>
                     <div className="md:w-1/2 pl-6 md:pl-0 md:pr-6 md:even:pl-6 md:even:pr-0">
-                      <Card className="bg-slate-900/50 border-slate-800">
+                      <Card>
                         <CardHeader>
                           <CardTitle>{milestone.title}</CardTitle>
                         </CardHeader>
                         <CardContent>
-                          <p className="text-slate-100">{milestone.description}</p>
+                          <p>{milestone.description}</p>
                         </CardContent>
                       </Card>
                     </div>
@@ -260,16 +260,16 @@ export default function AboutUsPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 * index }}
               >
-                <Card className="bg-slate-900/50 border-slate-800 overflow-hidden">
+                <Card className="overflow-hidden">
                   <div className="relative h-64">
                     <Image src={member.image || "/placeholder.svg"} alt={member.name} fill className="object-cover" />
                   </div>
                   <CardHeader>
                     <CardTitle>{member.name}</CardTitle>
-                    <CardDescription><p className="text-slate-200">{member.position}</p></CardDescription>
+                    <CardDescription>{member.position}</CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-slate-100 text-sm">{member.bio}</p>
+                    <p className="text-sm">{member.bio}</p>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -293,29 +293,29 @@ export default function AboutUsPage() {
                   fill
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
+                <div className="absolute inset-0 bg-gray flex items-center justify-center">
                   <div className="text-center max-w-2xl p-6">
-                    <h3 className="text-2xl font-bold mb-4">Our Global Offices</h3>
-                    <p className="text-slate-100 mb-6">
+                    <h3 className="text-2xl font-bold mb-4 text-black">Our Global Offices</h3>
+                    <p className="text-black mb-6">
                       With headquarters in San Francisco and offices in London, Singapore, and Sydney, we provide
                       localized support to clients worldwide.
                     </p>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                       <div className="text-center">
-                        <h4 className="font-bold">San Francisco</h4>
-                        <p className="text-sm text-slate-100">Headquarters</p>
+                        <h4 className="font-bold text-black">San Francisco</h4>
+                        <p className="text-sm text-slate-700">Headquarters</p>
                       </div>
-                      <div className="text-center">
+                      <div className="text-center text-black">
                         <h4 className="font-bold">London</h4>
-                        <p className="text-sm text-slate-100">EMEA Office</p>
+                        <p className="text-sm text-slate-700">EMEA Office</p>
                       </div>
-                      <div className="text-center">
+                      <div className="text-center text-black">
                         <h4 className="font-bold">Singapore</h4>
-                        <p className="text-sm text-slate-100">APAC Office</p>
+                        <p className="text-sm text-slate-700">APAC Office</p>
                       </div>
-                      <div className="text-center">
+                      <div className="text-center text-black">
                         <h4 className="font-bold">Sydney</h4>
-                        <p className="text-sm text-slate-100">ANZ Office</p>
+                        <p className="text-sm text-slate-700">ANZ Office</p>
                       </div>
                     </div>
                   </div>
@@ -330,37 +330,37 @@ export default function AboutUsPage() {
                   fill
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
+                <div className="absolute inset-0 bg-gray flex items-center justify-center">
                   <div className="text-center max-w-2xl p-6">
-                    <h3 className="text-2xl font-bold mb-4">Our Global Clients</h3>
-                    <p className="text-slate-300 mb-6">
+                    <h3 className="text-2xl font-bold mb-4 text-black">Our Global Clients</h3>
+                    <p className="text-black">
                       We serve clients in over 40 countries across six continents, from major broadcasters to
                       independent content creators.
                     </p>
                     <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                       <div className="text-center">
-                        <h4 className="font-bold">North America</h4>
-                        <p className="text-sm text-slate-400">35% of clients</p>
+                        <h4 className="font-bold text-black">North America</h4>
+                        <p className="text-sm text-slate-700">35% of clients</p>
                       </div>
                       <div className="text-center">
-                        <h4 className="font-bold">Europe</h4>
-                        <p className="text-sm text-slate-400">30% of clients</p>
+                        <h4 className="font-bold text-black">Europe</h4>
+                        <p className="text-sm text-slate-700">30% of clients</p>
                       </div>
                       <div className="text-center">
-                        <h4 className="font-bold">Asia Pacific</h4>
-                        <p className="text-sm text-slate-400">25% of clients</p>
+                        <h4 className="font-bold text-black">Asia Pacific</h4>
+                        <p className="text-sm text-slate-700">25% of clients</p>
                       </div>
                       <div className="text-center">
-                        <h4 className="font-bold">Latin America</h4>
-                        <p className="text-sm text-slate-400">5% of clients</p>
+                        <h4 className="font-bold text-black">Latin America</h4>
+                        <p className="text-sm text-slate-700">5% of clients</p>
                       </div>
                       <div className="text-center">
-                        <h4 className="font-bold">Middle East</h4>
-                        <p className="text-sm text-slate-400">3% of clients</p>
+                        <h4 className="font-bold text-black">Middle East</h4>
+                        <p className="text-sm text-slate-700">3% of clients</p>
                       </div>
                       <div className="text-center">
-                        <h4 className="font-bold">Africa</h4>
-                        <p className="text-sm text-slate-400">2% of clients</p>
+                        <h4 className="font-bold text-black">Africa</h4>
+                        <p className="text-sm text-slate-700">2% of clients</p>
                       </div>
                     </div>
                   </div>
@@ -372,13 +372,13 @@ export default function AboutUsPage() {
 
         <div className="text-center">
           <h2 className="text-2xl font-bold mb-4">Join Our Team</h2>
-          <p className="text-slate-700 mb-6 max-w-2xl mx-auto">
+          <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
             We're always looking for talented individuals who are passionate about media technology and innovation.
           </p>
           <Link href="/careers">
             <Button
               size="lg"
-              className="bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700"
+              className="bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white"
             >
               View Career Opportunities
               <ArrowRight className="ml-2 h-4 w-4" />

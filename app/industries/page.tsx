@@ -76,7 +76,6 @@ const industriesData = [
     featured: false,
   },
 ]
-
 export default function IndustriesPage() {
   const [searchTerm, setSearchTerm] = useState("")
 
@@ -88,11 +87,11 @@ export default function IndustriesPage() {
   )
 
   return (
-    <div className="min-h-screen pt-24 pb-16">
+    <div className="min-h-screen pt-24 pb-16 bg-background text-foreground">
       <div className="container mx-auto px-4">
         <Link
           href="/#industries"
-          className="inline-flex items-center text-sm text-slate-400 hover:text-purple-400 transition-colors mb-8"
+          className="inline-flex items-center text-sm text-muted-foreground hover:text-purple-400 transition-colors mb-8"
         >
           <ArrowLeft className="mr-2 h-4 w-4" />
           Back to Home
@@ -108,7 +107,7 @@ export default function IndustriesPage() {
             Industries We Serve
           </h1>
           <div className="h-1 w-24 bg-gradient-to-r from-purple-500 to-cyan-500 mx-auto mb-6" />
-          <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Tailored solutions for diverse media and entertainment sectors, designed to address industry-specific
             challenges.
           </p>
@@ -127,7 +126,7 @@ export default function IndustriesPage() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.1 * index }}
                 >
-                  <Card className="bg-slate-900/50 border-slate-800 overflow-hidden h-full">
+                  <Card className="h-full">
                     <div className="grid grid-cols-1 md:grid-cols-2 h-full">
                       <div className="relative h-48 md:h-auto">
                         <Image
@@ -143,7 +142,7 @@ export default function IndustriesPage() {
                       <div className="p-6 flex flex-col justify-between">
                         <div>
                           <h3 className="text-xl font-bold mb-2">{industry.title}</h3>
-                          <p className="text-slate-300 mb-4 line-clamp-3">{industry.description}</p>
+                          <p className="text-muted-foreground mb-4 line-clamp-3">{industry.description}</p>
                           <div className="flex flex-wrap gap-2 mb-4">
                             {industry.solutions.map((solution) => (
                               <Badge key={solution} variant="outline" className="text-xs">
@@ -153,7 +152,7 @@ export default function IndustriesPage() {
                           </div>
                         </div>
                         <Link href={`/industries/${industry.id}`}>
-                          <Button className="w-full bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700">
+                          <Button className="w-full bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white">
                             Learn More
                             <ArrowRight className="ml-2 h-4 w-4" />
                           </Button>
@@ -170,10 +169,10 @@ export default function IndustriesPage() {
         <div className="mb-8">
           <div className="max-w-md mx-auto">
             <div className="relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400" />
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground" />
               <Input
                 placeholder="Search industries..."
-                className="pl-10 bg-slate-900/50 border-slate-800"
+                className="pl-10"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
@@ -204,10 +203,10 @@ export default function IndustriesPage() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex items-end p-6 z-20">
                       <div>
-                        <h3 className="text-xl font-bold mb-2 group-hover:text-purple-400 transition-colors">
+                        <h3 className="text-xl text-black font-bold mb-2 group-hover:text-purple-400 transition-colors">
                           {industry.title}
                         </h3>
-                        <p className="text-sm text-slate-300 line-clamp-2">{industry.description}</p>
+                        <p className="text-sm text-black line-clamp-2">{industry.description}</p>
                       </div>
                     </div>
                   </div>
@@ -219,14 +218,14 @@ export default function IndustriesPage() {
         {/* CTA Section */}
         <div className="mt-16 bg-gradient-to-r from-purple-900/20 to-cyan-900/20 rounded-xl p-8 text-center">
           <h2 className="text-2xl font-bold mb-4">Ready to transform your media workflow?</h2>
-          <p className="text-slate-300 mb-6 max-w-2xl mx-auto">
+          <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
             Contact our team today to discuss how our industry-specific solutions can help you achieve your goals.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link href="/contact">
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700"
+                className="bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white"
               >
                 Request Demo
                 <ArrowRight className="ml-2 h-4 w-4" />

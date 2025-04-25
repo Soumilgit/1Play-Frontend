@@ -80,7 +80,6 @@ const caseStudiesData = [
     solution: "Content Management Systems",
   },
 ]
-
 export default function CaseStudiesPage() {
   const [searchTerm, setSearchTerm] = useState("")
   const [industryFilter, setIndustryFilter] = useState("")
@@ -103,7 +102,7 @@ export default function CaseStudiesPage() {
   const solutions = Array.from(new Set(caseStudiesData.map((study) => study.solution)))
 
   return (
-    <div className="min-h-screen pt-24 pb-16">
+    <div className="min-h-screen pt-24 pb-16 bg-background text-foreground">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -115,7 +114,7 @@ export default function CaseStudiesPage() {
             Case Studies
           </h1>
           <div className="h-1 w-24 bg-gradient-to-r from-purple-500 to-cyan-500 mx-auto mb-6" />
-          <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Explore how our innovative solutions have helped clients across various industries transform their media
             workflows.
           </p>
@@ -124,24 +123,24 @@ export default function CaseStudiesPage() {
         <div className="mb-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-100" />
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground" />
               <Input
                 placeholder="Search case studies..."
-                className="placeholder-white pl-10 bg-slate-900/50 border-slate-800 "
+                className="pl-10"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
             </div>
             <div className="relative">
               <Select value={industryFilter} onValueChange={setIndustryFilter}>
-                <SelectTrigger className="bg-slate-900/50 border-slate-800">
+                <SelectTrigger>
                   <SelectValue placeholder="Filter by Industry" />
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="all">All Industries</SelectItem>
                   {industries.map((industry) => (
-                    <SelectItem key={industry} value={industry}><p className="text-slate-100">
-                      {industry}</p>
+                    <SelectItem key={industry} value={industry}>
+                      {industry}
                     </SelectItem>
                   ))}
                 </SelectContent>
@@ -149,7 +148,7 @@ export default function CaseStudiesPage() {
             </div>
             <div className="relative">
               <Select value={solutionFilter} onValueChange={setSolutionFilter}>
-                <SelectTrigger className="bg-slate-900/50 border-slate-800">
+                <SelectTrigger>
                   <SelectValue placeholder="Filter by Solution" />
                 </SelectTrigger>
                 <SelectContent>
@@ -180,7 +179,7 @@ export default function CaseStudiesPage() {
                 transition={{ duration: 0.5, delay: 0.1 * index }}
               >
                 <Link href={`/case-studies/${study.id}`}>
-                  <Card className="h-full bg-slate-900/50 border-slate-800 hover:border-slate-700 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/5 group overflow-hidden">
+                  <Card className="h-full hover:border-primary transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/5 group overflow-hidden">
                     <div className="relative h-48 overflow-hidden">
                       <Image
                         src={study.image || "/placeholder.svg"}
@@ -197,12 +196,12 @@ export default function CaseStudiesPage() {
                       <CardTitle className="text-xl group-hover:text-purple-400 transition-colors">
                         {study.title}
                       </CardTitle>
-                      <CardDescription ><p className = "text-black">
+                      <CardDescription>
                         {study.industry} • {study.solution}
-                        </p></CardDescription>
+                      </CardDescription>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-slate-300 mb-4 line-clamp-3">{study.description}</p>
+                      <p className="mb-4 line-clamp-3">{study.description}</p>
                       <div className="flex flex-wrap gap-2">
                         {study.tags.map((tag) => (
                           <Badge key={tag} variant="outline" className="text-xs">
@@ -224,11 +223,11 @@ export default function CaseStudiesPage() {
           </motion.div>
         ) : (
           <div className="text-center py-12">
-            <div className="mb-4 text-slate-400">
+            <div className="mb-4 text-muted-foreground">
               <Filter className="h-12 w-12 mx-auto opacity-50" />
             </div>
             <h3 className="text-xl font-medium mb-2">No case studies found</h3>
-            <p className="text-slate-400 mb-6">Try adjusting your search or filters to find what you're looking for.</p>
+            <p className="text-muted-foreground mb-6">Try adjusting your search or filters to find what you're looking for.</p>
             <Button
               variant="outline"
               onClick={() => {
