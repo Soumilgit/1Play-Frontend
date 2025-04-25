@@ -15,7 +15,7 @@ export default function Footer() {
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-cyan-400 rounded-full opacity-70 blur-sm" />
                 <div className="absolute inset-0 flex items-center justify-center">
       <img
-        src="https://media.licdn.com/dms/image/v2/C510BAQEhP-s4ejt1Ag/company-logo_200_200/company-logo_200_200/0/1630602071829/1_play_sports_pte_ltd_logo?e=2147483647&v=beta&t=FwDmmB6ta1TAim6qCn08b8pZlhsCDwku2nN9orYWzxw" 
+        src="./logo.jpeg" 
         alt="Custom Image"
         className="h-8 w-8" 
       />
