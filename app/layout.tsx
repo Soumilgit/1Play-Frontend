@@ -26,9 +26,6 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
-          {/* Logo added here */}
-          <div className="flex justify-center py-4">
-          </div>
           <Navbar />
           <main className="min-h-screen">{children}</main>
           <Footer />
