@@ -54,7 +54,7 @@ export default function HeroSection() {
                 />
               </span>
             </h1>
-            <p className="text-lg md:text-xl text-slate-300 mb-8 max-w-xl mx-auto lg:mx-0">
+            <p className="text-lg md:text-xl text-slate-400 mb-8 max-w-xl mx-auto lg:mx-0">
               Cutting-edge solutions for broadcast, film, and entertainment industries. Elevate your media production
               with our innovative technology.
             </p>
@@ -97,7 +97,7 @@ export default function HeroSection() {
                         <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-r from-purple-600 to-cyan-600 mb-4">
                           <Play className="h-8 w-8 text-white" fill="white" />
                         </div>
-                        <h3 className="text-xl font-bold mb-2">Media Production Tools</h3>
+                        <h3 className="text-xl font-bold mb-2 text-slate-100">Media Production Tools</h3>
                         <p className="text-sm text-slate-400 max-w-xs">
                           Professional-grade tools for content creation, editing, and distribution.
                         </p>
