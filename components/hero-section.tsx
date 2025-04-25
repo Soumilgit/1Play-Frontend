@@ -30,7 +30,7 @@ export default function HeroSection() {
       </div>
 
       <div className="container mx-auto px-4 pt-32 pb-20 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -54,7 +54,7 @@ export default function HeroSection() {
                 />
               </span>
             </h1>
-            <p className="text-lg md:text-xl text-slate-600 mb-8 max-w-xl mx-auto lg:mx-0">
+            <p className="text-lg md:text-xl text-slate-300 mb-8 max-w-xl mx-auto lg:mx-0">
               Cutting-edge solutions for broadcast, film, and entertainment industries. Elevate your media production
               with our innovative technology.
             </p>

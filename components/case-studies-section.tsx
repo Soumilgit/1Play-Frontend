@@ -82,7 +82,7 @@ export default function CaseStudiesSection() {
   }
 
   return (
-    <section ref={ref} className="py-20 bg-white dark:bg-gradient-to-b dark:from-slate-900 dark:to-black text-black dark:text-slate-300">
+    <section ref={ref} className="py-20 bg-white dark:bg-gradient-to-b dark:from-slate-900 dark:to-slate-900 text-black dark:text-slate-300">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <motion.h2

@@ -69,7 +69,7 @@ export default function IndustriesSection() {
   return (
     <section
       ref={ref}
-      className="py-20 bg-white dark:bg-gradient-to-b dark:from-black dark:to-slate-900"
+      className="py-20 bg-white dark:bg-gradient-to-b dark:from-slate-900 dark:to-slate-900"
     >
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">

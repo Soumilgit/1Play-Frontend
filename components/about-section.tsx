@@ -25,7 +25,7 @@ export default function AboutSection() {
   }
 
   return (
-    <section ref={ref} className="py-20 bg-white dark:bg-gradient-to-b dark:from-black dark:to-slate-900 text-black dark:text-white">
+    <section ref={ref} className="py-20 bg-white dark:bg-gradient-to-b dark:bg-slate-900 text-black dark:text-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <motion.h2
