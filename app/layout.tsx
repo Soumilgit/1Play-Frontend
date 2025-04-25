@@ -28,14 +28,6 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
           {/* Logo added here */}
           <div className="flex justify-center py-4">
-            <Image
-              src="https://media.licdn.com/dms/image/v2/C510BAQEhP-s4ejt1Ag/company-logo_200_200/0/1630602071829/1_play_sports_pte_ltd_logo?e=2147483647&v=beta&t=FwDmmB6ta1TAim6qCn08b8pZlhsCDwku2nN9orYWzxw"
-              alt="1 Play Global Logo"
-              width={200} // Adjust as needed
-              height={200} // Adjust as needed
-              className="h-auto"
-              unoptimized // Required for external images in Next.js
-            />
           </div>
           <Navbar />
           <main className="min-h-screen">{children}</main>
