@@ -79,7 +79,7 @@ export default function ContactPage() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="lg:col-span-2"
           >
-            <Card className="bg-slate-900/50 border-slate-800">
+            <Card className="bg-white border-slate-800">
               <CardHeader>
                 <CardTitle className="text-2xl">Get in Touch</CardTitle>
                 <CardDescription>
@@ -177,7 +177,7 @@ export default function ContactPage() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.4 }}
           >
-            <Card className="bg-slate-900/50 border-slate-800 h-full">
+            <Card className="bg-white border-slate-800 h-full">
               <CardHeader>
                 <CardTitle className="text-2xl">Contact Information</CardTitle>
                 <CardDescription>Reach out to us directly through any of these channels.</CardDescription>
@@ -188,9 +188,9 @@ export default function ContactPage() {
                     <Mail className="h-6 w-6 text-purple-400" />
                   </div>
                   <div>
-                    <h4 className="font-medium mb-1">Email</h4>
-                    <p className="text-slate-300">info@1playglobal.com</p>
-                    <p className="text-slate-300">support@1playglobal.com</p>
+                    <p className="font-medium mb-1">Email</p>
+                    <p className="text-slate-600">info@1playglobal.com</p>
+                    <p className="text-slate-600">support@1playglobal.com</p>
                   </div>
                 </div>
 
@@ -200,8 +200,8 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h4 className="font-medium mb-1">Phone</h4>
-                    <p className="text-slate-300">+1 (555) 123-4567</p>
-                    <p className="text-slate-300">+44 20 1234 5678</p>
+                    <p className="text-slate-600">+1 (555) 123-4567</p>
+                    <p className="text-slate-600">+44 20 1234 5678</p>
                   </div>
                 </div>
 
@@ -211,14 +211,14 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h4 className="font-medium mb-1">Office Locations</h4>
-                    <p className="text-slate-300 mb-2">
+                    <p className="text-slate-600 mb-2">
                       <strong>Headquarters:</strong>
                       <br />
                       123 Tech Plaza, Suite 500
                       <br />
                       San Francisco, CA 94105, USA
                     </p>
-                    <p className="text-slate-300">
+                    <p className="text-slate-600">
                       <strong>APAC Office:</strong>
                       <br />
                       One Raffles Place, #10-01

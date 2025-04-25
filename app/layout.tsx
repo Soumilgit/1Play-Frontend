@@ -5,13 +5,16 @@ import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
+import Image from "next/image" // Required for external images
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "1 Play Global | Media Technology Solutions",
   description: "Innovative media technology solutions for broadcast, film, and entertainment industries",
-    generator: 'v0.dev'
+  icons: {
+    icon: "/favicon.ico.jpeg", // Saved in /public folder
+  },
 }
 
 export default function RootLayout({

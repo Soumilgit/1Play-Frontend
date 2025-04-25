@@ -116,7 +116,7 @@ export default function MediaHubSection() {
             >
               {pressReleases.map((item, index) => (
                 <motion.div key={item.title} variants={itemVariants}>
-                  <Card className="h-full bg-slate-900/50 border-slate-800 hover:border-slate-700 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/5 group">
+                  <Card className="h-full bg-white border-slate-800 hover:border-slate-700 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/5 group">
                     <CardHeader>
                       <div className="mb-4">
                         <Newspaper className="h-8 w-8 text-purple-400" />
@@ -124,10 +124,10 @@ export default function MediaHubSection() {
                       <CardTitle className="text-lg group-hover:text-purple-400 transition-colors">
                         {item.title}
                       </CardTitle>
-                      <CardDescription className="text-slate-100 dark:text-slate-400">{item.date}</CardDescription>
+                      <CardDescription className="text-slate-100 dark:text-slate-700">{item.date}</CardDescription>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-slate-300 dark:text-slate-200 text-sm">{item.excerpt}</p>
+                      <p className="text-slate-700 dark:text-slate-200 text-sm">{item.excerpt}</p>
                     </CardContent>
                     <CardFooter>
                       
@@ -148,7 +148,7 @@ export default function MediaHubSection() {
               {videos.map((video, index) => (
                 <motion.div key={video.title} variants={itemVariants}>
                   <Link href={video.link}>
-                    <Card className="h-full bg-slate-900/50 border-slate-800 hover:border-slate-700 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/5 group overflow-hidden">
+                    <Card className="h-full bg-white border-slate-800 hover:border-slate-700 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/5 group overflow-hidden">
                       <div className="relative">
                         <Image
                           src={video.thumbnail || "/placeholder.svg"}
@@ -186,7 +186,7 @@ export default function MediaHubSection() {
               className="grid grid-cols-1 md:grid-cols-2 gap-6"
             >
               <motion.div variants={itemVariants}>
-                <Card className="h-full bg-slate-900/50 border-slate-800 hover:border-slate-700 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/5 group">
+                <Card className="h-full bg-white border-slate-800 hover:border-slate-700 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/5 group">
                   <CardHeader>
                     <div className="mb-4">
                       <FileText className="h-8 w-8 text-cyan-400" />
@@ -196,10 +196,10 @@ export default function MediaHubSection() {
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-slate-300 dark:text-slate-200 text-sm mb-4">
+                    <p className="text-slate-700 dark:text-slate-200 text-sm mb-4">
                       In-depth analysis and research on the latest trends in media technology.
                     </p>
-                    <ul className="space-y-2 text-sm text-slate-400 dark:text-slate-300">
+                    <ul className="space-y-2 text-sm text-slate-500 dark:text-slate-300">
                       <li className="hover:text-purple-400 transition-colors">
                         <Link href="/media-hub/resources/ai-in-media">The Future of AI in Media Production</Link>
                       </li>
@@ -223,7 +223,7 @@ export default function MediaHubSection() {
               </motion.div>
 
               <motion.div variants={itemVariants}>
-                <Card className="h-full bg-slate-900/50 border-slate-800 hover:border-slate-700 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/5 group">
+                <Card className="h-full bg-white border-slate-800 hover:border-slate-700 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/5 group">
                   <CardHeader>
                     <div className="mb-4">
                       <ImageIcon className="h-8 w-8 text-purple-400" />
@@ -233,7 +233,7 @@ export default function MediaHubSection() {
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-slate-300 dark:text-slate-200 text-sm mb-4">
+                    <p className="text-slate-600 dark:text-slate-200 text-sm mb-4">
                       Official logos, product images, and brand guidelines for media use.
                     </p>
                     <div className="grid grid-cols-3 gap-2 mb-4">

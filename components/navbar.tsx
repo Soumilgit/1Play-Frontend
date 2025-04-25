@@ -83,7 +83,7 @@ export default function Navbar() {
                 "px-3 py-2 text-sm font-medium rounded-md transition-colors",
                 pathname === item.href
                   ? "text-white bg-slate-800"
-                  : "text-slate-300 hover:text-white hover:bg-slate-800/50",
+                  : "text-slate-400 hover:text-white hover:bg-slate-800/50",
               )}
             >
               {item.name}

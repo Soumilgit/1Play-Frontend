@@ -218,7 +218,7 @@ export default function MediaHubPage() {
                   transition={{ duration: 0.5 }}
                   className="mb-12"
                 >
-                  <Card className="bg-slate-900/50 border-slate-800 overflow-hidden">
+                  <Card className="bg-white border-slate-800 overflow-hidden">
                     <div className="grid grid-cols-1 md:grid-cols-2">
                       <div className="relative h-64 md:h-auto">
                         <Image
@@ -231,8 +231,8 @@ export default function MediaHubPage() {
                       <div className="p-6 md:p-8 flex flex-col justify-center">
                         <Badge className="w-fit mb-4 bg-purple-500 hover:bg-purple-600">Featured</Badge>
                         <h2 className="text-2xl font-bold mb-2">{featured.title}</h2>
-                        <p className="text-sm text-slate-100 mb-4">{featured.date}</p>
-                        <p className="text-slate-300 mb-6">{featured.excerpt}</p>
+                        <p className="text-sm text-slate-700 mb-4">{featured.date}</p>
+                        <p className="text-slate-600 mb-6">{featured.excerpt}</p>
                           
                       </div>
                     </div>
@@ -251,7 +251,7 @@ export default function MediaHubPage() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.1 * index }}
                   >
-                    <Card className="h-full bg-slate-900/50 border-slate-800 hover:border-slate-700 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/5 group">
+                    <Card className="h-full bg-white border-slate-800 hover:border-slate-700 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/5 group">
                       <CardHeader>
                         <div className="mb-4">
                           <Newspaper className="h-8 w-8 text-purple-400" />
@@ -259,10 +259,10 @@ export default function MediaHubPage() {
                         <CardTitle className="text-lg group-hover:text-purple-400 transition-colors">
                           {item.title}
                         </CardTitle>
-                        <CardDescription className="text-slate-200">{item.date}</CardDescription>
+                        <CardDescription className="text-slate-700">{item.date}</CardDescription>
                       </CardHeader>
                       <CardContent>
-                        <p className="text-slate-300 text-sm">{item.excerpt}</p>
+                        <p className="text-slate-600 text-sm">{item.excerpt}</p>
                       </CardContent>
                       <CardFooter>
                         
@@ -284,7 +284,7 @@ export default function MediaHubPage() {
                   transition={{ duration: 0.5, delay: 0.1 * index }}
                 >
                   <Link href={`/media-hub/videos/${video.id}`}>
-                    <Card className="h-full bg-slate-900/50 border-slate-800 hover:border-slate-700 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/5 group overflow-hidden">
+                    <Card className="h-full bg-white border-slate-800 hover:border-slate-700 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/5 group overflow-hidden">
                       <div className="relative">
                         <Image
                           src={video.thumbnail || "/placeholder.svg"}
@@ -309,7 +309,7 @@ export default function MediaHubPage() {
                         <CardTitle className="text-lg group-hover:text-purple-400 transition-colors">
                           {video.title}
                         </CardTitle>
-                        <CardDescription><p className="text-slate-100">{video.date}</p></CardDescription>
+                        <CardDescription><p className="text-slate-700">{video.date}</p></CardDescription>
                       </CardHeader>
                     </Card>
                   </Link>
@@ -327,7 +327,7 @@ export default function MediaHubPage() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.1 * index }}
                 >
-                  <Card className="h-full bg-slate-900/50 border-slate-800 hover:border-slate-700 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/5 group">
+                  <Card className="h-full bg-white border-slate-800 hover:border-slate-700 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/5 group">
                     <CardHeader>
                       <div className="flex items-center justify-between mb-2">
                         <div className="mb-2">
@@ -338,10 +338,10 @@ export default function MediaHubPage() {
                       <CardTitle className="text-lg group-hover:text-purple-400 transition-colors">
                         {resource.title}
                       </CardTitle>
-                      <CardDescription><p className="text-slate-100">{resource.date}</p></CardDescription>
+                      <CardDescription><p className="text-slate-700">{resource.date}</p></CardDescription>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-slate-300 text-sm mb-4">{resource.description}</p>
+                      <p className="text-slate-700 text-sm mb-4">{resource.description}</p>
                     </CardContent>
                     <CardFooter className="flex justify-between">
                       
@@ -372,13 +372,13 @@ export default function MediaHubPage() {
 
           <TabsContent value="brand">
             <div className="max-w-3xl mx-auto mb-12">
-              <Card className="bg-slate-900/50 border-slate-800 mb-8">
+              <Card className="bg-white border-slate-800 mb-8">
                 <CardHeader>
                   <CardTitle className="text-2xl">Brand Assets</CardTitle>
-                  <CardDescription><p className="text-slate-100">Official logos, product images, and brand guidelines for media use.</p></CardDescription>
+                  <CardDescription><p className="text-slate-700">Official logos, product images, and brand guidelines for media use.</p></CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-slate-300 mb-6">
+                  <p className="text-slate-700 mb-6">
                     These assets are available for use by media, partners, and customers in accordance with our brand
                     guidelines. For any specific requests or questions, please contact our marketing team at
                     marketing@1playglobal.com.
@@ -408,22 +408,22 @@ export default function MediaHubPage() {
                 </CardFooter>
               </Card>
 
-              <Card className="bg-slate-900/50 border-slate-800">
+              <Card className="bg-white border-slate-800">
                 <CardHeader>
                   <CardTitle className="text-2xl">Brand Guidelines</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-slate-300 mb-6">
+                  <p className="text-slate-700 mb-6">
                     Our brand guidelines provide detailed information on how to properly use our logos, colors,
                     typography, and other brand elements.
                   </p>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <Card className="bg-slate-800 border-slate-700">
+                    <Card className="bg-white border-slate-700">
                       <CardHeader>
-                        <CardTitle className="text-lg text-slate-300">Logo Usage</CardTitle>
+                        <CardTitle className="text-lg text-slate-700">Logo Usage</CardTitle>
                       </CardHeader>
                       <CardContent>
-                        <p className="text-sm text-slate-300">
+                        <p className="text-sm text-slate-700">
                           Guidelines for proper logo placement, sizing, and clearance space.
                         </p>
                       </CardContent>
@@ -434,12 +434,12 @@ export default function MediaHubPage() {
                         </Button>
                       </CardFooter>
                     </Card>
-                    <Card className="bg-slate-800 border-slate-700">
+                    <Card className="bg-white border-slate-700">
                       <CardHeader>
-                        <CardTitle className="text-lg text-slate-300">Color Palette</CardTitle>
+                        <CardTitle className="text-lg text-slate-700">Color Palette</CardTitle>
                       </CardHeader>
                       <CardContent>
-                        <p className="text-sm text-slate-300">Official brand colors with HEX, RGB, and CMYK values.</p>
+                        <p className="text-sm text-slate-700">Official brand colors with HEX, RGB, and CMYK values.</p>
                       </CardContent>
                       <CardFooter>
                         <Button variant="outline" size="sm">
