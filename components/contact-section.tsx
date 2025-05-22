@@ -45,14 +45,14 @@ export default function ContactSection() {
   }
 
   return (
-    <section ref={ref} className="py-20 bg-gradient-to-b from-white to-slate-100 dark:from-slate-900 dark:to-black">
+    <section ref={ref} className="py-20 bg-white dark:bg-gradient-to-b dark:bg-slate-900 text-black dark:text-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.5 }}
-            className="text-3xl text-red-600 md:text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-red-600 via-slate-200 to-cyan-500 dark:text-white"
+            className="text-3xl md:text-4xl font-bold mb-4 text-red-600 "
           >
             Contact Us
           </motion.h2>
@@ -60,7 +60,7 @@ export default function ContactSection() {
             initial={{ width: 0 }}
             animate={isInView ? { width: "100px" } : { width: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="h-1 bg-gradient-to-r from-red-600 via-slate-200 to-cyan-500"
+            className="h-1 bg-gradient-to-r from-red-600 via-slate-200 to-cyan-500 mx-auto mb-6"
           />
           <motion.p
             initial={{ opacity: 0 }}
@@ -191,8 +191,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <h4 className="font-medium mb-1 dark:text-white">Email</h4>
-                    <p className="text-slate-700 dark:text-slate-300">info@1playglobal.com</p>
-                    <p className="text-slate-700 dark:text-slate-300">support@1playglobal.com</p>
+                    <p className="text-slate-700 dark:text-slate-300">hello@1play.global</p>
                   </div>
                 </div>
 
@@ -202,8 +201,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <h4 className="font-medium mb-1 dark:text-white">Phone</h4>
-                    <p className="text-slate-700 dark:text-slate-300">+1 (555) 123-4567</p>
-                    <p className="text-slate-700 dark:text-slate-300">+44 20 1234 5678</p>
+                    <p className="text-slate-700 dark:text-slate-300">+65 94554297</p>
                   </div>
                 </div>
 
@@ -214,18 +212,20 @@ export default function ContactSection() {
                   <div>
                     <h4 className="font-medium mb-1 dark:text-white">Office Locations</h4>
                     <p className="text-slate-700 dark:text-slate-300 mb-2">
-                      <strong>Headquarters:</strong>
-                      <br />
-                      123 Tech Plaza, Suite 500
-                      <br />
-                      San Francisco, CA 94105, USA
+                      <strong>1 PLAY GLOBAL PTE LTD</strong>
+              
+                     <br/>North Bridge Road. #19-08. High Street Centre.
+                      <br/>Singapore 179094.
+                      <br/>UEN 200708266E
+
                     </p>
                     <p className="text-slate-700 dark:text-slate-300">
-                      <strong>APAC Office:</strong>
-                      <br />
-                      One Raffles Place, #10-01
-                      <br />
-                      Singapore 048616
+                      <strong>1 Play Sports India Digital Private Limited</strong>
+                      <br />E-1/407, Kailas Esplanade,
+                      <br />LBS Road,
+                      <br />Ghatkopar West,
+                      <br />Mumbai-400086
+                      <br />GST: 27AABCZ5113H1ZE
                     </p>
                   </div>
                 </div>

@@ -72,7 +72,7 @@ export default function SolutionsSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.5 }}
-            className="text-3xl text-red-600 md:text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-red-400 via-slate-300 to-cyan-400 dark:from-red-400 dark:to-cyan-300"
+            className="text-3xl md:text-4xl font-bold mb-4 text-red-600 "
           >
             Technology Stack
           </motion.h2>

@@ -47,20 +47,20 @@ export default function Navbar() {
       <Link href="/" className="flex items-center space-x-2">
   <motion.div
     initial={{ rotate: 0 }}
-    animate={{ rotate: 360 }}
-    transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+    animate={{ rotate: 0 }}
+    transition={{ duration: 0, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
     className="relative w-8 h-8"
   >
     <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-cyan-400 rounded-full opacity-70 blur-sm" />
     <div className="absolute inset-0 flex items-center justify-center">
       <img
-        src="https://media.licdn.com/dms/image/v2/C510BAQEhP-s4ejt1Ag/company-logo_200_200/company-logo_200_200/0/1630602071829/1_play_sports_pte_ltd_logo?e=2147483647&v=beta&t=FwDmmB6ta1TAim6qCn08b8pZlhsCDwku2nN9orYWzxw" 
+        src="./logo.jpeg" 
         alt="Custom Image"
         className="h-8 w-8" 
       />
     </div>
   </motion.div>
-  <span className="font-bold text-xl tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-cyan-500">
+  <span className="font-bold text-xl tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-cyan-500">
     1Play Global
   </span>
 </Link>

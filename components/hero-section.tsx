@@ -15,20 +15,18 @@ export default function HeroSection() {
     const video = videoRef.current
     if (!video) return
 
-    // Enhanced video playback with multiple fallbacks
+    // Simplified video playback with permanent mute
     const playVideo = () => {
-      video.muted = true // Start with muted to maximize play success
+      video.muted = true // Ensure video is muted
       const playPromise = video.play()
       
       if (playPromise !== undefined) {
         playPromise
           .then(() => {
             video.playbackRate = 0.7
-            // Try unmuting after play starts (user gesture required on some browsers)
-            video.muted = false
           })
           .catch(error => {
-            console.log("Video play failed, keeping muted:", error)
+            console.log("Video play failed:", error)
           })
       }
     }
@@ -36,14 +34,9 @@ export default function HeroSection() {
     // Immediate play attempt
     playVideo()
 
-    // Add more robust interaction listeners
+    // Add interaction listeners for playback only
     const handleUserInteraction = () => {
       playVideo()
-      try {
-        video.muted = false // Attempt to unmute on interaction
-      } catch (e) {
-        console.log("Couldn't unmute video:", e)
-      }
     }
 
     document.addEventListener('click', handleUserInteraction, { once: true })

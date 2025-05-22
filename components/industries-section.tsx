@@ -77,7 +77,7 @@ export default function IndustriesSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.5 }}
-            className="text-3xl text-red-600 md:text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r  from-red-500 via-slate-300 to-cyan-300 hover:from-red-400 hover:to-cyan-300"
+            className="text-3xl md:text-4xl font-bold mb-4 text-red-600"
             
           >
             Industries We Serve
@@ -86,7 +86,7 @@ export default function IndustriesSection() {
             initial={{ width: 0 }}
             animate={isInView ? { width: "100px" } : { width: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="bg-gradient-to-r from-red-500 via-slate-300 to-cyan-300 hover:from-red-400 hover:to-cyan-300"
+            className="h-1 bg-gradient-to-r from-red-500 to-cyan-500 mx-auto mb-6"
           />
           <motion.p
             initial={{ opacity: 0 }}

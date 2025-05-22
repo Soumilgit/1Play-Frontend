@@ -142,7 +142,7 @@ export default function CaseStudiesSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.5 }}
-            className="text-3xl md:text-4xl font-bold mb-4 text-red-600 dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r from-red-600 via-slate-200 to-cyan-500"
+            className="text-3xl md:text-4xl font-bold mb-4 text-red-600 "
           >
             Case Studies
           </motion.h2>
