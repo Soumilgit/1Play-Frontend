@@ -91,18 +91,13 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/careers" className="text-slate-400 hover:text-purple-400 transition-colors">
+                 Careers
+                </Link>
+              </li>
+              <li>
                 <Link href="/#industries" className="text-slate-400 hover:text-purple-400 transition-colors">
                   Industries
-                </Link>
-              </li>
-              <li>
-                <Link href="/#case-studies" className="text-slate-400 hover:text-purple-400 transition-colors">
-                  Case Studies
-                </Link>
-              </li>
-              <li>
-                <Link href="/#media-hub" className="text-slate-400 hover:text-purple-400 transition-colors">
-                  Media Hub
                 </Link>
               </li>
               <li>
@@ -118,18 +113,18 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start space-x-3">
                 <Mail className="h-5 w-5 text-purple-400 mt-0.5" />
-                <span className="text-slate-400">info@1playglobal.com</span>
+                <span className="text-slate-400">hello@1play.global</span>
               </li>
               <li className="flex items-start space-x-3">
                 <Phone className="h-5 w-5 text-cyan-400 mt-0.5" />
-                <span className="text-slate-400">+1 (555) 123-4567</span>
+                <span className="text-slate-400">+65 94554297</span>
               </li>
               <li className="flex items-start space-x-3">
                 <MapPin className="h-5 w-5 text-purple-400 mt-0.5" />
                 <span className="text-slate-400">
-                  123 Tech Plaza, Suite 500
+                  North Bridge Road. #19-08. High Street Centre.
                   <br />
-                  San Francisco, CA 94105, USA
+                  Singapore 179094.
                 </span>
               </li>
             </ul>
@@ -147,22 +142,6 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-slate-800 dark:border-slate-700 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-slate-500 dark:text-slate-400 text-sm mb-4 md:mb-0">
-            &copy; {new Date().getFullYear()} 1Play Global Pte Ltd. All rights reserved.
-          </p>
-          <div className="flex space-x-6">
-            <Link href="/terms" className="text-slate-500 dark:text-slate-400 hover:text-purple-400 text-sm transition-colors">
-              Terms of Service
-            </Link>
-            <Link href="/privacy" className="text-slate-500 dark:text-slate-400 hover:text-purple-400 text-sm transition-colors">
-              Privacy Policy
-            </Link>
-            <Link href="/cookies" className="text-slate-500 dark:text-slate-400 hover:text-purple-400 text-sm transition-colors">
-              Cookie Policy
-            </Link>
-          </div>
-        </div>
       </div>
     </footer>
   )

@@ -15,8 +15,6 @@ const navItems = [
   { name: "Solutions", href: "/solutions" },
   { name: "Careers", href: "/careers" },
   { name: "Industries", href: "/industries" },
-  { name: "Case Studies", href: "/case-studies" },
-  { name: "Media Hub", href: "/media-hub" },
   { name: "Contact", href: "/contact" },
 ]
 
@@ -83,19 +81,7 @@ export default function Navbar() {
               {item.name}
             </Link>
           ))}
-          <Button
-            variant="outline"
-            size="icon"
-            className="ml-2"
-            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-          >
-            {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
-          </Button>
-          <Link href="/contact">
-            <Button className="text-slate-300 ml-2 bg-gradient-to-r from-red-600 to-cyan-600 hover:from-red-700 hover:to-cyan-700">
-              Request Demo
-            </Button>
-          </Link>
+          
         </nav>
 
         {/* Mobile Menu Button */}
@@ -114,43 +100,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Navigation */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="md:hidden bg-black/90 backdrop-blur-md border-b border-slate-800"
-          >
-            <div className="container mx-auto px-4 py-3">
-              <nav className="flex flex-col space-y-2">
-                {navItems.map((item) => (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    onClick={() => handleNavClick(item.href)}
-                    className={cn(
-                      "px-3 py-2 text-sm font-medium rounded-md transition-colors",
-                      pathname === item.href
-                        ? "text-white bg-slate-800"
-                        : "text-slate-300 hover:text-white hover:bg-slate-800/50",
-                    )}
-                  >
-                    {item.name}
-                  </Link>
-                ))}
-                <Link href="/contact">
-                  <Button className="mt-2 w-full bg-gradient-to-r from-red-600 to-cyan-600 hover:from-red-700 hover:to-cyan-700 text-slate-300">
-                    Request Demo
-                  </Button>
-                </Link>
-              </nav>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      
     </header>
   )
 }

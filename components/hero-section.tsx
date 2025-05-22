@@ -108,26 +108,10 @@ export default function HeroSection() {
               Our AI-first platform gives creators full ownership and monetization control. 
               Break free from platform lock-in with white-label apps in minutes - no code required.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
-              <Button
-                size="lg"
-                className="w-full sm:w-auto bg-white text-black hover:bg-white/90 hover:text-black dark:bg-white dark:text-black dark:hover:bg-white/90 shadow-lg"
-              >
-                Get Started
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="w-full sm:w-auto bg-transparent text-white hover:bg-white/10 hover:text-white border-white dark:border-white/80 dark:text-white/90 dark:hover:bg-white/20"
-              >
-                <Play className="mr-2 h-4 w-4" fill="currentColor" />
-                See How It Works
-              </Button>
-            </div>
+            
           </motion.div>
 
-          {/* Right column placeholder */}
+      
         </div>
       </div>
     </section>

@@ -61,34 +61,24 @@ export default function AboutUsPage() {
 
   const milestones = [
     {
-      year: "2015",
-      title: "Company Founded",
-      description: "1Play Global was established with a vision to transform media technology.",
-    },
-    {
-      year: "2017",
-      title: "First Major Client",
-      description: "Secured partnership with a leading broadcast network, launching our growth trajectory.",
-    },
-    {
       year: "2019",
-      title: "Series A Funding",
-      description: "Raised $15M to accelerate product development and market expansion.",
+      title: "1000 Sports Livestream",
+      description: "Partnered 40 organisations with 110M minutes of content, generating approx $750,000 revenue",
     },
     {
-      year: "2021",
-      title: "International Expansion",
-      description: "Opened offices in Europe and Asia to serve our growing global client base.",
+      year: "2020",
+      title: "Enter India Market",
+      description: "Launch of Playmersiv SAAS Platform, in partnership with SPORE GOV(Sports SG)",
     },
     {
-      year: "2023",
-      title: "Technology Innovation Award",
-      description: "Recognized for breakthrough advancements in AI-powered media solutions.",
+      year: "2022",
+      title: "Launched Podium Web3 Blockchain Platform",
+      description: "Partnership with SPORE Ministry of Education",
     },
     {
-      year: "2025",
-      title: "Series C Funding",
-      description: "Secured $50M to further accelerate growth and innovation.",
+      year: "2024",
+      title: "Oddson Gamification Platform",
+      description: "Content Genre Agnostic, Gen AI Integration, Google Partnership, Dulwich Olympiad App and Ayodhya Metaverse",
     },
   ]
 

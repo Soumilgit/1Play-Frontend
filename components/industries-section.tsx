@@ -15,37 +15,37 @@ export default function IndustriesSection() {
       title: "Broadcast & OTT",
       image: "/bro.png?height=400&width=600",
       description: "Solutions for traditional and digital broadcasting",
-      link: "/industries/broadcast-ott",
+      link: "",
     },
     {
       title: "Film & Entertainment",
       image: "/film.png?height=400&width=600",
       description: "Tools for filmmakers and content creators",
-      link: "/industries/film-entertainment",
+      link: "",
     },
     {
       title: "Advertising & Agencies",
       image: "/adv.png?height=400&width=600",
       description: "Creative solutions for marketing professionals",
-      link: "/industries/advertising-agencies",
+      link: "",
     },
     {
       title: "Education & eLearning",
       image: "/moe.png?height=400&width=600",
       description: "Engaging content delivery for educational institutions",
-      link: "/industries/education-elearning",
+      link: "",
     },
     {
       title: "Sports & Live Events",
       image: "./hcli.png?height=400&width=600",
       description: "Real-time production for sporting events",
-      link: "/industries/sports-events",
+      link: "",
     },
     {
       title: "Devotion & Spirituality",
       image: "./ayodhya.png?height=600&width=600",
       description: "Solutions for religious and spiritual content",
-      link: "/industries/devotion-spirituality",
+      link: "",
     },
   ]
 
@@ -106,7 +106,7 @@ export default function IndustriesSection() {
         >
           {industries.map((industry, index) => (
             <motion.div key={industry.title} variants={itemVariants}>
-              <Link href={industry.link} className="block group">
+              
                 <div className="relative overflow-hidden rounded-xl mb-4">
                   <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
                   <Image
@@ -127,7 +127,7 @@ export default function IndustriesSection() {
                     </div>
                   </div>
                 </div>
-              </Link>
+              
             </motion.div>
           ))}
         </motion.div>

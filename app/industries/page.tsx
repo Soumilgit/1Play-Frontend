@@ -230,15 +230,6 @@ export default function IndustriesPage() {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link href="/contact">
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-700 hover:to-cyan-700 text-white"
-              >
-                Request Demo
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </Link>
-            <Link href="/contact">
               <Button size="lg" variant="outline">
                 Contact Sales
               </Button>
